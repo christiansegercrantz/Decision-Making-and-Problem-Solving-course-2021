@@ -80,4 +80,61 @@
 		\caption{The plotted utility function based on Dr. Stoveos choices.}
 		\label{fig:3}
 	\end{figure}
+\section{Expected utility, risk-attitude, and risk measures}
+\subsection{a)}
+	In order to find out what the investors risk attitude is, we will use first and second order derivaties. 
+	\begin{align}
+		\frac{d}{dx}\sqrt{x} &= \frac{1}{2}x^{-\frac{1}{2}} \\
+		\frac{d^2}{dx^2}\sqrt{x} &= -\frac{1}{4}x^{-\frac{3}{2}} \\
+		\frac{d}{dx}x^3 &=  3x^2\\
+		\frac{d^2}{dx^2}x^3 &= 6x
+	\end{align}
+	From these we can see that Rick Averell's utility functions first order derivative is always positive and hence is the utility function increasing. The second order derivative is always negative the growth is decreasing. From this we can conclude that the function is concave and Rick Averell is risk averse.
+	We can draw conclusions in the same way for Ricki Seeck. Since both order derivatives are positive, we know that the function is increasingly positive and thus convex. Mr. Seeck's utility function is thus risk seeking. 
+\subsection{b)}
+\subsubsection{i}
+	We can calculate the expected utility as $E[u(X)] = \int f_x(x) u(x)dx$. 
+	\begin{equation}
+		f_x(t) = 
+		\begin{cases}
+			 \frac{1}{50}, &  50 \leq x \leq 100 \\
+			 0, & \mbox{otherwise}
+		\end{cases}
+	\end{equation}
+	By integrating over the whole space we get,:
+	\begin{align}
+		\int f_x(x) u(x)dt &= \\
+		\int_{50}^{100} \frac{1}{50} u(x) dt& 
+	\end{align}
+	We count the expected utility for Rick Averell:
+	\begin{align}
+		\int_{50}^{100} \frac{1}{50} \sqrt{x} dx &=  \\
+		\Bigg/_{50}^{100} \frac{1}{50} \frac{3}{2} x^{\frac{3}{2}} = \frac{3}{2} x^{\frac{3}{2}} &= \\
+		\Bigg/_{50}^{100} \frac{3}{100} x^{\frac{3}{2}}	& \approx 8.62		
+	\end{align}
+	Using the same logic we calculate the expected utility for Ricki Seeck:
+	\begin{equation}
+		\int_{50}^{100} \frac{1}{50} x^3 dx  = 468750.	
+	\end{equation}
+	To summarize, the expected utilities are $E[u(X)]_{Rick Averall} \approx 8.62$ and $E[u(X)]_{Ricki Seeck} = 468750$
+	
+	The certainty equivalent is calculated by $CE[x] = u^{-1}(E[u(X)])$. For Rick Averall this means
+	\begin{equation}
+		CE[x]_{Rick Averall} = u^{-1}(E[u(X)]) = E[u(X)]_{Rick Averall}^2 \approx 74.3
+	\end{equation}
+	and for Ricki Seeck 
+		\begin{equation}
+		CE[x]_{Ricki Seeck} = u^{-1}(E[u(X)]) = \sqrt[3]{E[u(X)]_{Ricki Seeck}} \approx 77.7.
+	\end{equation}
+
+	The risk premia is calculated as $RP[X] = E[X] - CE[X]$. 
+	For Rick Averall this becomes:
+	\begin{equation}
+		E[u(X)]_{Rick Averall} - CE[x]_{Rick Averall} \approx -65.7,
+	\end{equation}
+	and for Ricki Seeck:
+		\begin{equation}
+		E[u(X)]_{Ricki Seeck} - CE[x]_{Ricki Seeck} \approx 468 672
+	\end{equation}
+	%Seems not to be in line with the attidude???
 \end{document}

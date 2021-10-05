@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.29)  4 OCT 2021 16:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.29)  5 OCT 2021 16:09
 entering extended mode
 **./MS-E3134_2st_assignment_report.tex
 (MS-E3134_2st_assignment_report.tex
@@ -327,7 +327,7 @@ File: Plots/3.png Graphic file (type png)
 <use Plots/3.png>
 Package pdftex.def Info: Plots/3.png  used on input line 79.
 (pdftex.def)             Requested size: 399.21791pt x 239.58017pt.
- [4 <./Plots/3.png>] (MS-E3134_2st_assignment_report.aux) ) 
+ [4 <./Plots/3.png>] [5] [6] (MS-E3134_2st_assignment_report.aux) ) 
 Here is how much of TeX's memory you used:
  4664 strings out of 492453
  68739 string characters out of 3129819
@@ -335,18 +335,22 @@ Here is how much of TeX's memory you used:
  8965 multiletter control sequences out of 15000+200000
  7502 words of font info for 29 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,10n,42p,373b,272s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ 46i,12n,42p,373b,272s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
->
-Output written on MS-E3134_2st_assignment_report.pdf (4 pages, 200899 bytes).
+lic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on MS-E3134_2st_assignment_report.pdf (6 pages, 255420 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
+ 74 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
