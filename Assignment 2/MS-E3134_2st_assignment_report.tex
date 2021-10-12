@@ -8,8 +8,10 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{eurosym}
 
 \graphicspath{ {Plots/} }
+
 
 \begin{document}
 	\textit{MS-E2134 - Decision making and problem solving}
@@ -25,7 +27,7 @@
 \subsection{a)}
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{1a.png}
-	\caption{Capion here}
+	\caption{A table displaying ten iterations of the 5 first years for exercise 1.1 a)}
 	\label{fig:1a}
 \end{figure}
 
@@ -58,6 +60,22 @@
 		\end{tabular}
 	\end{table}
 \section{Decision trees}
+\subsection{b)}
+	The value of prefect information (EVPI) can be calculated as the expected value of the possible out comes times the value of that outcome minus the expected value of the default decision tree, i.e. $EVPI = EV|PI - EMV$.
+	We can build a table for our $EV|PI$-value, it can be seen in Table \ref{tab:2b}.
+	\begin{table}[h]
+		\centering
+		\caption{Table displaying key values of prefect information. }
+		\label{tab:2b}
+		\begin{tabular}{l|l|l}
+			Knowledge                 & Probability & Outcome \\ \hline
+			Accept deal + Win court   & 0.2         & 5mil\euro   \\
+			Accept deal + Lose court  & 0.2         & 5mil\euro   \\
+			Decline deal + Win court  & 0.3         & 8mil\euro   \\
+			Decline deal + Lose court & 0.3         & 2mil\euro  
+		\end{tabular}
+	\end{table}
+	The value is thus $EV|PI = 0.2\cdot5+0.2\cdot5+0.3\cdot8+0.3\cdot2 = 5$mil\euro which gives us the result $\text{EVPI} = 5 - 4.1 = 0.9$mil\euro.
 \section{Elicitation of utility functions}
 	We start by calculating the different values for the utility functions. We normalize the utility function such that $u(10M)=1$ and $u(-2M)=0$. We can thus calculate:
 	\begin{align}
@@ -82,7 +100,7 @@
 	\end{figure}
 \section{Expected utility, risk-attitude, and risk measures}
 \subsection{a)}
-	In order to find out what the investors risk attitude is, we will use first and second order derivaties. 
+	In order to find out what the investors risk attitude is, we will use first and second order derivatives. 
 	\begin{align}
 		\frac{d}{dx}\sqrt{x} &= \frac{1}{2}x^{-\frac{1}{2}} \\
 		\frac{d^2}{dx^2}\sqrt{x} &= -\frac{1}{4}x^{-\frac{3}{2}} \\
@@ -127,14 +145,96 @@
 		CE[x]_{Ricki Seeck} = u^{-1}(E[u(X)]) = \sqrt[3]{E[u(X)]_{Ricki Seeck}} \approx 77.7.
 	\end{equation}
 
-	The risk premia is calculated as $RP[X] = E[X] - CE[X]$. 
+	The risk premia is calculated as $RP[X] = E[X] - CE[X]$. The expected vlaue is $E(X) = 75$ 
 	For Rick Averall this becomes:
 	\begin{equation}
-		E[u(X)]_{Rick Averall} - CE[x]_{Rick Averall} \approx -65.7,
+		E[X] - CE[x]_{Rick Averall} \approx 0.7,
 	\end{equation}
 	and for Ricki Seeck:
 		\begin{equation}
-		E[u(X)]_{Ricki Seeck} - CE[x]_{Ricki Seeck} \approx 468 672
+		E[X] - CE[x]_{Ricki Seeck} \approx -2.7.
 	\end{equation}
-	%Seems not to be in line with the attidude???
+	Since Rick Averall's risk premia is postivie and Ricki Seeck's is negative, they are inline with our earlier interpretation of the risk attitudes.
+\subsubsection{ii}
+	The calculations can be seen in the attached .mlx file. The values we received were approximately the following:\\
+	$E[u(X)]_{Rick Averall} = 5.1$ \\
+	$E[u(X)]_{Ricki Seeck} = 6\cdot10^5$\\
+	$CE[x]_{Rick Averall} = 26.3 $ \\
+	$CE[x]_{Ricki Seeck} = 84.7$ \\
+	$RP[X]_{Rick Averall} = 7.2$ \\
+	$RP[X]_{Ricki Seeck} = -51.1$ \\
+	These numbers are inline with our conclusions from part a) about the risk attitudes of the DM's.
+\subsubsection{iii}
+	The calculations can be seen in the attached .mlx file. The values we received were approximately the following:\\
+	$E[u(X)]_{Rick Averall} = 9.49$ \\
+	$E[u(X)]_{Ricki Seeck} = 1.54\cdot10^6$\\
+	$CE[x]_{Rick Averall} = 90.00 $ \\
+	$CE[x]_{Ricki Seeck} = 117.83$ \\
+	$RP[X]_{Rick Averall} = 8.25$ \\
+	$RP[X]_{Ricki Seeck} = -19.58$ \\
+	These numbers are inline with our conclusions from part a) about the risk attitudes of the DM's.
+\subsection{c)}
+\subsubsection{i}
+	We start by analytically calculating the $10\%$ Value-at-Risk (VaR) and Conditional Value-at-Risk (CVaR)  for the uniform distribution. The VaR is calculated as 
+	\begin{equation}
+		\int_{-\infty}^{\text{VaR}_\alpha [X]} f_X(t)dt = \alpha = F_X(\text{VaR}_{\alpha}[X]) \iff \text{VaR}_\alpha [X] =  F_X^{-1}(\alpha).
+	\end{equation}
+	Let's compute the inverse of the CDF of our function.
+	\begin{align}
+		F_X &= 
+		\begin{cases}
+			0 , & x < 50 \\
+			 \frac{x-50}{50}, &  50 \leq x \leq 100 \\
+			1, & 100 < x
+		\end{cases} \\
+		\implies F^{-1}_X &= 
+			50x + 50,   50 \leq x \leq 100 \\
+	\end{align}
+	Using this we can the substitute x for $\alpha = 0.1$
+	\begin{equation}
+		\text{VaR}_{0.1} [X] = F^{-1}_X(0.1) = 55.
+	\end{equation}
+	We can now calculate the CVar as 
+	\begin{equation}
+		E[X | X \leq \text{VaR}_\alpha [X]] = \int_{-\infty}^{\text{VaR}_\alpha [X]} x \frac{f_x(x)}{\alpha} dx.
+	\end{equation} 
+	For our unifrom function this becomes
+	\begin{align}
+		\text{CVaR}_{10\%} &=  \int_{50}^{55} x \frac{1/50}{0.1} dx \\
+		 & = \Bigg/_{50}^{55} \frac{x^2}{10} \\
+		 & =  52.5.
+	\end{align}
+	To summarize $\text{VaR}_{10\%}=55$ and $\text{CVaR}_{10\%}=52.5$.
+\subsubsection{ii}
+	The calculations can be seen in the attached .mlx file. We receive the values $\text{VaR}_{10\%} = 5.6$ and $\text{CVaR}_{10\%} = 3.6$.
+\subsubsection{iii}
+	The calculations can be seen in the attached .mlx file. We receive the values $\text{VaR}_{10\%} = 10$ and $\text{CVaR}_{10\%} = 7.50$.
+\section{Stochastic dominance}
+\subsection{a)}
+	From Figure \ref{fig:5} we can see that the discrete distribution forst order stochastic dominates the Log-normal distribution since it's always below.
+	\begin{equation}
+		\text{Discrete}  \succcurlyeq_{FSD} \text{LogN}(3,1^2)
+	\end{equation}
+	\begin{figure}[H]
+		\includegraphics[width=0.8\textwidth]{5.png}
+		\caption{The Cumulative distribution functions three distributions}
+		\label{fig:5}
+	\end{figure}
+\subsection{b)}
+	We can identify three different second order stochastic dominations from the CDF's
+	\begin{enumerate}
+		\item The discretre distribution dominates the Log-normal distrubtion as a result of it's first order stochastic dominance.
+		\item By examining the plot, we can see that the area below the discrete and above the uniform is less than that which is below the uniform and above the discrete. I.e. the integral of the discrete function will be larger than that of the uniform.
+		\item  The same reason from the point above can be applied to the uniform and log-normal distribution. The integral of the uniform distrubtion is larger than that of the log-normal.
+	\end{enumerate}
+		We can thus conclude that we have
+		\begin{equation}
+			\text{Discrete} \succcurlyeq_{SSD} \text{UNI}(50,100) \succcurlyeq_{SSD} \text{LogN}(3,1^2).
+		\end{equation}
+\subsection{c)}
+	For a DM that is risk-averse, any option that is strictly dominated in the sense of FSD should not be chosen. I.e. we should not recommend the log-normal distribution to them. 
+	Since the discrete distribution dominates the uniform in the sense of SSD we would recommend it to the risk averse DM.
+\subsection{d)}
+	As in part c), any option that is strictly dominated in the sense of FSD should not be chosen.
+	
 \end{document}
