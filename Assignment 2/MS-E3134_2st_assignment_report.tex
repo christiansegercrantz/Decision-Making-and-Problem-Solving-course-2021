@@ -45,7 +45,7 @@
 		\end{tabular}
 	\end{table}
 	
-	Based on the simulations, it seems that starting a own business venture would for sure be the more lucrative, and better, option. However, an average over 200 replications might give us an overly optimistic outlook.
+	Based on the simulations, it seems that starting the own business venture would for sure be the more lucrative, and better, option. However, an average over 200 replications might give us an overly optimistic outlook.
 \subsection{c)}
 	We can see the probabilities from Table \ref{tab:1c}. We can see that initially the probability is approximately 5\% and rises to approximately 20\% in year 5. For the steady job, as the maximum of the expenses is less than the constant income, the probability that he is not able to cover his expenses is 0\% for all years.
 	\begin{table}[h]
@@ -69,7 +69,7 @@
 		\label{fig:2a}
 	\end{figure}
 \subsection{b)}
-	The value of prefect information (EVPI) can be calculated as the expected value of the possible out comes times the value of that outcome minus the expected value of the default decision tree, i.e. $EVPI = EV|PI - EMV$.
+	The value of prefect information (EVPI) can be calculated as the expected value of the possible outcomes times the probability of that outcome minus the expected value of the default decision tree, i.e. $EVPI = EV|PI - EMV$.
 	We can build a table for our $EV|PI$-value, it can be seen in Table \ref{tab:2b}.
 	\begin{table}[h]
 		\centering
@@ -129,8 +129,8 @@
 		\frac{d}{dx}x^3 &=  3x^2\\
 		\frac{d^2}{dx^2}x^3 &= 6x
 	\end{align}
-	From these we can see that Rick Averell's utility functions first order derivative is always positive and hence is the utility function increasing. The second order derivative is always negative the growth is decreasing. From this we can conclude that the function is concave and Rick Averell is risk averse.
-	We can draw conclusions in the same way for Ricki Seeck. Since both order derivatives are positive, we know that the function is increasingly positive and thus convex. Mr. Seeck's utility function is thus risk seeking. 
+	From these we can see that Rick Averell's utility functions first order derivative is positive for all $x>0$ and hence is the utility function increasing. The second order derivative is negative for all $x>0$ the growth is decreasing. From this we can conclude that the function is concave and Rick Averell is risk averse.
+	We can draw conclusions in the same way for Ricki Seeck. Since both order derivatives are positive for all $x>0$, we know that the function is increasingly positive and thus convex. Mr. Seeck's utility function is thus risk seeking. 
 \subsection{b)}
 \subsubsection{i}
 	We can calculate the expected utility as $E[u(X)] = \int f_x(x) u(x)dx$. 
@@ -233,10 +233,12 @@
 	The calculations can be seen in the attached .mlx file. We receive the values $\text{VaR}_{10\%} = 10$ and $\text{CVaR}_{10\%} = 7.50$.
 \section{Stochastic dominance}
 \subsection{a)}
-	From Figure \ref{fig:5} we can see that the discrete distribution forst order stochastic dominates the Log-normal distribution since it's always below.
-	\begin{equation}
-		\text{Discrete}  \succcurlyeq_{FSD} \text{LogN}(3,1^2)
-	\end{equation}
+	From Figure \ref{fig:5} we can see that discrete distribution nearly first order stochastic dominates the Log-normal distribution but since the Log-normal distribution never actually reaches 1 and the discrete distribution does at 200, there is no first order stochatic domination
+	
+%	From Figure \ref{fig:5} we can see that the discrete distribution first order stochastic dominates the Log-normal distribution since it's always below.
+%	\begin{equation}
+%		\text{Discrete}  \succcurlyeq_{FSD} \text{LogN}(3,1^2)
+%	\end{equation}
 	\begin{figure}[H]
 		\includegraphics[width=0.8\textwidth]{5.png}
 		\caption{The Cumulative distribution functions three distributions}
@@ -245,7 +247,7 @@
 \subsection{b)}
 	We can identify three different second order stochastic dominations from the CDF's
 	\begin{enumerate}
-		\item The discretre distribution dominates the Log-normal distrubtion as a result of it's first order stochastic dominance.
+		\item The discretre distribution dominates the Log-normal distrubtion as a result of it's nearly first order stochastic dominance.
 		\item By examining the plot, we can see that the area below the discrete and above the uniform is less than that which is below the uniform and above the discrete. I.e. the integral of the discrete function will be larger than that of the uniform.
 		\item  The same reason from the point above can be applied to the uniform and log-normal distribution. The integral of the uniform distrubtion is larger than that of the log-normal.
 	\end{enumerate}
@@ -257,6 +259,6 @@
 	For a DM that is risk-averse, any option that is strictly dominated in the sense of FSD should not be chosen. I.e. we should not recommend the log-normal distribution to them. 
 	Since the discrete distribution dominates the uniform in the sense of SSD we would recommend it to the risk averse DM.
 \subsection{d)}
-	As in part c), any option that is strictly dominated in the sense of FSD should not be chosen.
+	As in part c), any option that is strictly dominated in the sense of FSD should not be chosen. Hence, I would recommend the discrete distribution to the risk neutral DM.
 	
 \end{document}
