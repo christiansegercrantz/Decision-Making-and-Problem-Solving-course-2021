@@ -10,6 +10,8 @@
 \usepackage{subcaption}
 \usepackage{eurosym}
 
+\usepackage{comment}
+
 \graphicspath{ {Plots/} }
 
 
@@ -23,7 +25,7 @@
 	\pagebreak
 	\tableofcontents
 	\pagebreak
-\section{1}
+\section{Attribute-specific value functions - value functions}
 The value functions are as follows:
 \begin{align}
 	v_1(x_1) =& \frac{1}{40}x_1 \\
@@ -43,16 +45,45 @@ The value functions are as follows:
 	v_5(x_5) =& \frac{1}{20}x_5\\
 	v_6(x_6) =& \frac{1}{20}x_6\\
 	v_7(x_7) =& \frac{1}{100}x_7\\
-	v_8(x_8) =& \frac{512}{1023}0.5^{x_8} + \\
+	v_8(x_8) =& 
+		\begin{cases}
+			\frac{1024}{1023}\left(1-2^{-x_8}\right) & 0 \leq x_8 < 10 \\
+			1 &  10 \leq x_8
+		\end{cases} \\
 	v_9(x_9) =&
+		\begin{cases}
+			 \frac{1}{4}(1-\sqrt{5})\left(1-\left(\frac{1}{2}\left(1+\sqrt{5}\right)\right)^{3-x_9}\right) & 0 \leq x_9 < 3 \\
+			 0 & 3 \leq x_9
+		\end{cases}
 \end{align}
+\section{Attribute-specific value functions - values}
+\section{Attribute-specific value functions - value plots}
+\section{Attribute weights}
+\begin{comment} v_9 derivation
+\begin{equation}
+	B+A(1-e^{-(3-x_9)/r}) \text{ and } v_9(0)-v_9(1) = v_9(1) - v_9(3)
+\end{equation}
 
 \begin{align}
-	y-y_1 &= m(x-x_1) \\
-	y_2 &= mx_2-mx_1+y_1 \\
-	y_2 &= mx_2-mx_1+(m(x_1-x_0)+y_0)
+	&B+A(1-e^{-(3-x_9)/r})\\ 
+	v_9(3) = 0 =& B+A(1-e^{-(3-3)/r}) \iff B= 0 \\
+	v_9(0) = 1 =& A(1-e^{-(3-0)/r}) \\
+	& \frac{1}{A}= 1 - e^{-3/r} \\
+	& A= \frac{1}{1-u^3} \\
 \end{align}
-
-$B+A(1-e^{-(3-x_9)/r})$
-
+\begin{align}
+	v_9(100)= 0 =& A(1-e^{-(3-100)/r})\\
+\end{align}
+\begin{align}
+	v_9(0)-v_9(1) &= v_9(1) - v_9(3)\\
+	2v_9(1) &= v_9(0)\\
+	v_9(1) &= \frac{1}{2}\\
+	\frac{1}{2} &= \frac{1}{1-u^3}(1-u^{2})\\
+	1-u^3 &= 2-2u^2\\
+	-u^3 + 2u^2 - 1 &= 0 \implies  u=\frac{1}{2}+\frac{\sqrt{5}}{2} \left(\lor u=1 \lor u=\frac{1}{2}-\frac{\sqrt{5}}{2}\right) \\
+	e^{-1/r} &= 	\frac{1}{2}+\frac{\sqrt{5}}{2} \iff r = \frac{1}{ln(2) - ln(1 + sqrt(5))}	\\
+	\implies A&= \frac{1}{1-( 1/2 + sqrt(5)/2)} \iff A= \frac{1}{4}(1-\sqrt{5}) \\
+	\implies v_9&= \frac{1}{4}(1-\sqrt{5})\left(1-\left(\frac{1}{2}\left(1+\sqrt{5}\right)^{-(3-x_9)}\right)\right)
+\end{align}
+\end{comment}
 \end{document}
