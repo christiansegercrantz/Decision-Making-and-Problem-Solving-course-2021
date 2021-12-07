@@ -56,34 +56,174 @@ The value functions are as follows:
 			 0 & 3 \leq x_9
 		\end{cases}
 \end{align}
-\section{Attribute-specific value functions - values}
-\section{Attribute-specific value functions - value plots}
-\section{Attribute weights}
 \begin{comment} v_9 derivation
 \begin{equation}
-	B+A(1-e^{-(3-x_9)/r}) \text{ and } v_9(0)-v_9(1) = v_9(1) - v_9(3)
+B+A(1-e^{-(3-x_9)/r}) \text{ and } v_9(0)-v_9(1) = v_9(1) - v_9(3)
 \end{equation}
 
 \begin{align}
-	&B+A(1-e^{-(3-x_9)/r})\\ 
-	v_9(3) = 0 =& B+A(1-e^{-(3-3)/r}) \iff B= 0 \\
-	v_9(0) = 1 =& A(1-e^{-(3-0)/r}) \\
-	& \frac{1}{A}= 1 - e^{-3/r} \\
-	& A= \frac{1}{1-u^3} \\
+&B+A(1-e^{-(3-x_9)/r})\\ 
+v_9(3) = 0 =& B+A(1-e^{-(3-3)/r}) \iff B= 0 \\
+v_9(0) = 1 =& A(1-e^{-(3-0)/r}) \\
+& \frac{1}{A}= 1 - e^{-3/r} \\
+& A= \frac{1}{1-u^3} \\
 \end{align}
 \begin{align}
-	v_9(100)= 0 =& A(1-e^{-(3-100)/r})\\
+v_9(100)= 0 =& A(1-e^{-(3-100)/r})\\
 \end{align}
 \begin{align}
-	v_9(0)-v_9(1) &= v_9(1) - v_9(3)\\
-	2v_9(1) &= v_9(0)\\
-	v_9(1) &= \frac{1}{2}\\
-	\frac{1}{2} &= \frac{1}{1-u^3}(1-u^{2})\\
-	1-u^3 &= 2-2u^2\\
-	-u^3 + 2u^2 - 1 &= 0 \implies  u=\frac{1}{2}+\frac{\sqrt{5}}{2} \left(\lor u=1 \lor u=\frac{1}{2}-\frac{\sqrt{5}}{2}\right) \\
-	e^{-1/r} &= 	\frac{1}{2}+\frac{\sqrt{5}}{2} \iff r = \frac{1}{ln(2) - ln(1 + sqrt(5))}	\\
-	\implies A&= \frac{1}{1-( 1/2 + sqrt(5)/2)} \iff A= \frac{1}{4}(1-\sqrt{5}) \\
-	\implies v_9&= \frac{1}{4}(1-\sqrt{5})\left(1-\left(\frac{1}{2}\left(1+\sqrt{5}\right)^{-(3-x_9)}\right)\right)
+v_9(0)-v_9(1) &= v_9(1) - v_9(3)\\
+2v_9(1) &= v_9(0)\\
+v_9(1) &= \frac{1}{2}\\
+\frac{1}{2} &= \frac{1}{1-u^3}(1-u^{2})\\
+1-u^3 &= 2-2u^2\\
+-u^3 + 2u^2 - 1 &= 0 \implies  u=\frac{1}{2}+\frac{\sqrt{5}}{2} \left(\lor u=1 \lor u=\frac{1}{2}-\frac{\sqrt{5}}{2}\right) \\
+e^{-1/r} &= 	\frac{1}{2}+\frac{\sqrt{5}}{2} \iff r = \frac{1}{ln(2) - ln(1 + sqrt(5))}	\\
+\implies A&= \frac{1}{1-( 1/2 + sqrt(5)/2)} \iff A= \frac{1}{4}(1-\sqrt{5}) \\
+\implies v_9&= \frac{1}{4}(1-\sqrt{5})\left(1-\left(\frac{1}{2}\left(1+\sqrt{5}\right)^{-(3-x_9)}\right)\right)
 \end{align}
 \end{comment}
+\section{Attribute-specific value functions - values}
+		The attribute values for all alternatives can be found from the attached excel.
+\section{Attribute-specific value functions - value plots}
+	\begin{figure}[H]
+		\includegraphics[width=0.8\textwidth]{3_v2.png}
+		\caption{The plot for $v_2$.}
+		\label{fig:3_v2}
+	\end{figure}
+	\begin{figure}[H]
+		\includegraphics[width=0.8\textwidth]{3_v9.png}
+		\caption{The plot for $v_9$.}
+		\label{fig:3_v9}
+	\end{figure}
+\section{Attribute weights}
+	From 1. , and knowing that 20 is the max and 0 the min for both value functions, we get the equation
+	\begin{align}
+		\frac{w_5 v_5(20)-w_5 v_5(0)}{w_6v_6(20)-w_6v_6(0)} &= \frac{40}{45}\\
+		w_5 = \frac{8}{9}w_6.
+	\end{align}
+	From 2., and knowing that the max value is 20 and min value is 2, we get
+	\begin{align}
+		\frac{w_6 v_6(20)-w_6 v_6(0)}{w_4v_4(20)-w_4v_4(2)} &= \frac{45}{30}.\\
+		w_4 = \frac{2}{3}w_6.
+	\end{align}
+	From 3. we get information about two equally preferred preferences, and again remembering the min value of the value functions,
+	\begin{align}
+		w_8v_8(1) - w_8v_8(0) &= w_4v_4(10) - w_4v_4(2)\\
+		w_8 &=  \frac{v_4(10)}{v_8(1)}w_4.
+	\end{align}
+	From 4. we get a similar equation as above
+	\begin{align}
+		w_7v_7(1) - w_7v_7(0) &= w_4v_4(3) - w_4v_4(2)\\
+		w_7 &=  \frac{v_4(3)}{v_7(1)}w_4.
+	\end{align}
+	From 5.	get multiple the following equality
+	\begin{align}
+		w_1v_1(40) - w_1v_1(0) &= w_2v_2(30) - w_2v_2(0) + w_3v_3(20) - w_3v_3(0)\\
+		w_1 &= w_2 + w_3v_3(20).
+	\end{align}
+	In 6., we know that all but two values do not change, hence we can omit them from the start
+	\begin{align}
+		w_1v_1(40) + w_9v_9(1.2) &= w_1v_1(10) + w_9v_9(0)\\
+		w_1 + w_9v_9(1.2) &= w_1v_1(10) + w_9\\
+		w_1(1-v_1(10))&=w_9(1-v_9(1.2))\\
+		w_9&=\frac{1-v_1(10)}{1-v_9(1.2)}w_1.
+	\end{align}
+	In 7., we know that the two changes from the minimum $x^0$ are equally preferred, i.e
+	\begin{align}
+		w_4v_4(10) + w_9v_9(1.2) - w_4v_4(2) - w_9v_9(100) &= w_4v_4(18) + w_9v_9(3) - w_4v_4(2) - w_9v_9(100)\\
+		w_4v_4(10) + w_9v_9(1.2) &= w_4v_4(18) + w_9v_9(3)\\
+		w_4v_4(10) + w_9v_9(1.2) &= w_4v_4(18)\\
+		w_9 = \frac{v_4(18)-v_4(10)}{v_9(1.2)}w_4.
+	\end{align}
+	From 8. we get
+	\begin{align}
+		w_2v_2(15)-w_2v_2(0) &= w_3v_3(30)-w_3v_3(2)\\
+		w_2v_2(15) &= w_3.
+	\end{align}
+	Additionally we know that the sum of weights equals to one 
+	\begin{equation}
+		\sum_{i=1}^{9}w_i=1.
+	\end{equation}
+	By solving these equations, we get the following values
+	\begin{alignat}{3}
+		w_1&= 0.062131...& \approx 0.06,\\
+		w_2&= 0.0412027...&\approx0.04,\\
+		w_3&= 0.0274685...&\approx0.03,\\
+		w_4&= 0.076779...&\approx0.08,\\
+		w_5&= 0.102372...&\approx0.10,\\
+		w_6&= 0.115168..&\approx0.12,\\
+		w_7&= 0.42655...&\approx0.43,\\
+		w_8&= 0.0681814...&\approx0.07,\\
+		w_9&= 0.080147...&\approx0.08.
+	\end{alignat}
+\section{Overall values}
+	Table \ref{tab:ex5} displays the normalized values of the sites times the area.
+	\begin{table}[H]
+		\centering
+		\caption{Normalized vlaue functions of the sites times the area.}
+		\label{tab:ex5}
+		\begin{tabular}{lll}
+			\textbf{Site} & \textbf{Area} & \textbf{Normalizied value} \\ \hline
+			1             & 1,2           & 0,26                       \\
+			2             & 3             & 0,88                       \\
+			3             & 2,1           & 0,71                       \\
+			4             & 3             & 0,64                       \\
+			5             & 0,8           & 0,25                       \\
+			6             & 2             & 0,70                       \\
+			7             & 3             & 0,70                       \\
+			8             & 0,9           & 0,23                       \\
+			9             & 1,1           & 0,37                       \\
+			10            & 2,4           & 0,48                      
+		\end{tabular}
+	\end{table}
+\section{Recalculated overall values}
+	Since $a_7$ most preferred level changes from 100 to 40, the value function  becomes $v_7=\frac{1}{40}x_7$. Thus, the only value in our system of equations for solving the weights that change is $v_7(1)$. The recalculated weights are
+	\begin{alignat}{3}
+		w_1&= 0.0835016...& \approx 0.08,\\
+		w_2&= 0.0553747...&\approx0.06,\\
+		w_3&= 0.0369165...&\approx0.04,\\
+		w_4&= 0.103188...&\approx0.10,\\
+		w_5&= 0.137584...&\approx0.14,\\
+		w_6&= 0.154782..&\approx0.15,\\
+		w_7&= 0.229306...&\approx0.23,\\
+		w_8&= 0.091633...&\approx0.09,\\
+		w_9&= 0.107714...&\approx0.11.
+	\end{alignat}
+	and the scores can be sen in Table \ref{tab:ex6}.
+	\begin{table}[]
+		\centering
+		\caption{Normalized value functions of the sites times the area.}
+		\label{tab:ex6}
+		\begin{tabular}{lll}
+			\textbf{Site} & \textbf{Area} & \textbf{Normalizied value} \\ \hline
+			1             & 1,2           & 0,34                       \\
+			2             & 3             & 1,18                       \\
+			3             & 2,1           & 0,95                       \\
+			4             & 3             & 0,86                       \\
+			5             & 0,8           & 0,34                       \\
+			6             & 2             & 0,94                       \\
+			7             & 3             & 0,94                       \\
+			8             & 0,9           & 0,31                       \\
+			9             & 1,1           & 0,50                       \\
+			10            & 2,4           & 0,65                      
+		\end{tabular}
+	\end{table}
+
+	If we calculate $\frac{V_i'(x_i)}{V_i(x_i)}$ we get a constant $\alpha\approx1.34$ for all $i$. This suggest that $V_i'(x_i)=\alpha V_i(x_i)$ for all $i$, i.e. the $V'$ is a affine transformation of $V$. 
+	
+\section{Site combination selection}
+	The binary linear optimization problem we need to solve is
+	\begin{alignat}{3}
+		\max_y& \sum_{j=1}^{10} V(x^j)y_j\\
+		\text{subject to} & \sum_{j=1}^{10} c_jy_j &\leq 25000\\
+		&y_j \in \mathbb{B},
+	\end{alignat}
+	where b is a binary variable indicating if a site is to be acquired. 
+	
+	The calculations for this part is done in the attached excel. The optimal solution are the following sites: 2, 3, 5, 6, 7, 9. This gives a optimal value of approximately $4,85$ at a cost of 24494\euro.
+
+\section{Multi-objective optimization applied to site combination selection - optimization}
+
+	
 \end{document}

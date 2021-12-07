@@ -1,1 +1,8 @@
-\contentsline {section}{\numberline {1}1. Attribute-specific value functions}{3}% 
+\contentsline {section}{\numberline {1}Attribute-specific value functions - value functions}{3}% 
+\contentsline {section}{\numberline {2}Attribute-specific value functions - values}{3}% 
+\contentsline {section}{\numberline {3}Attribute-specific value functions - value plots}{4}% 
+\contentsline {section}{\numberline {4}Attribute weights}{5}% 
+\contentsline {section}{\numberline {5}Overall values}{6}% 
+\contentsline {section}{\numberline {6}Recalculated overall values}{6}% 
+\contentsline {section}{\numberline {7}Site combination selection}{7}% 
+\contentsline {section}{\numberline {8}Multi-objective optimization applied to site combination selection - optimization}{7}% 
