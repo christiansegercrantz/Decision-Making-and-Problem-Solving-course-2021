@@ -15,5 +15,5 @@
 \contentsline {section}{\numberline {15}Robustness analysis of site combination selection - Non-dominated sites}{10}% 
 \contentsline {section}{\numberline {16}Robustness analysis of site combination selection - Previous solution}{10}% 
 \contentsline {section}{\numberline {17}Robustness analysis of site combination selection - Non-dominated combinations}{10}% 
-\contentsline {section}{\numberline {18}Robustness analysis of site combination selection - }{11}% 
-\contentsline {section}{\numberline {19}Robustness analysis of site combination selection - }{11}% 
+\contentsline {section}{\numberline {18}Robustness analysis of site combination selection - Too many solutions}{11}% 
+\contentsline {section}{\numberline {19}Robustness analysis of site combination selection - Missing solutions}{11}% 

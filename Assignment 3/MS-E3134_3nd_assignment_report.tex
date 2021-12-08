@@ -56,7 +56,11 @@ The value functions are as follows:
 			 0 & 3 \leq x_9
 		\end{cases}
 \end{align}
-For the derivation for $v_1, v_2, v_3, v_4, v_5, v_6, v_7$ simple linear interpolation was used based on the given facts. The derivation for $v_9$ can be seen below.
+For the derivation for $v_1, v_2, v_3, v_4, v_5, v_6, v_7$ simple linear interpolation was used based on the given information. 
+
+The derivation of $v_8$ made use of the fact that the ratio $ \frac{v_8(k+1)- v_8(k)}{v_8(k)- v_8(k-1)}=0.5$. Using this and the sum of the geometric sum is $\sum_{k}ar^k = a\left(\frac{1-r^{n+1}}{1-r}\right)$ we can derive the closed form.
+
+The derivation for $v_9$ can be seen below.
 %\begin{comment} v_9 derivation
 \begin{equation}
 B+A(1-e^{-(3-x_9)/r}) \text{ and } v_9(0)-v_9(1) = v_9(1) - v_9(3)
@@ -288,9 +292,8 @@ The sites that are non-dominated and feasible according to our linear constraint
 The reason our previous solution is found among the non-dominated ones is that our original weights are within the feasible region and a optimal solution is always a non-dominated solution. 
 \section{Robustness analysis of site combination selection - Non-dominated combinations}
 The number of non-dominated solutions can be seen from $Z_{ND2}$ and is 82.
-\section{Robustness analysis of site combination selection - }
-Since the amount of solutions found in part 8 is larger than in 17, we can for sure conclude that there are not in the set of non-dominated solutions. This can happen 
-
-\section{Robustness analysis of site combination selection - }
-We can find 37 solutions that are non-dominated but not optimal. This is since a solution can be non-dominated without being optimal. We have clear examples of this in the lecture slides, for example slide 6b slide 22. 
+\section{Robustness analysis of site combination selection - Too many solutions}
+Since the amount of solutions found in part 8 is larger than in 17, we can for sure conclude that there are not in the set of non-dominated solutions. This happens since the optimization methods can find solutions that are not actually pareto-optimal solutions. 
+\section{Robustness analysis of site combination selection - Missing solutions}
+We can find 37 solutions that are non-dominated but not optimal. This is again due to the optimization methods. The randomness used to choose the $\lambda$-values can cause the algorithm to never find some optimal solutions.
 \end{document}
