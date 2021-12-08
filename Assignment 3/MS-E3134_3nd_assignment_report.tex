@@ -56,7 +56,8 @@ The value functions are as follows:
 			 0 & 3 \leq x_9
 		\end{cases}
 \end{align}
-\begin{comment} v_9 derivation
+For the derivation for $v_1, v_2, v_3, v_4, v_5, v_6, v_7$ simple linear interpolation was used based on the given facts. The derivation for $v_9$ can be seen below.
+%\begin{comment} v_9 derivation
 \begin{equation}
 B+A(1-e^{-(3-x_9)/r}) \text{ and } v_9(0)-v_9(1) = v_9(1) - v_9(3)
 \end{equation}
@@ -80,9 +81,9 @@ v_9(1) &= \frac{1}{2}\\
 -u^3 + 2u^2 - 1 &= 0 \implies  u=\frac{1}{2}+\frac{\sqrt{5}}{2} \left(\lor u=1 \lor u=\frac{1}{2}-\frac{\sqrt{5}}{2}\right) \\
 e^{-1/r} &= 	\frac{1}{2}+\frac{\sqrt{5}}{2} \iff r = \frac{1}{ln(2) - ln(1 + sqrt(5))}	\\
 \implies A&= \frac{1}{1-( 1/2 + sqrt(5)/2)} \iff A= \frac{1}{4}(1-\sqrt{5}) \\
-\implies v_9&= \frac{1}{4}(1-\sqrt{5})\left(1-\left(\frac{1}{2}\left(1+\sqrt{5}\right)^{-(3-x_9)}\right)\right)
+\implies v_9&= \frac{1}{4}(1-\sqrt{5})\left(1-\left(\frac{1}{2}\left(1+\sqrt{5}\right)^{(3-x_9)}\right)\right)
 \end{align}
-\end{comment}
+%\end{comment}
 \section{Attribute-specific value functions - values}
 		The attribute values for all alternatives can be found from the attached excel.
 \section{Attribute-specific value functions - value plots}
@@ -224,6 +225,72 @@ e^{-1/r} &= 	\frac{1}{2}+\frac{\sqrt{5}}{2} \iff r = \frac{1}{ln(2) - ln(1 + sqr
 	The calculations for this part is done in the attached excel. The optimal solution are the following sites: 2, 3, 5, 6, 7, 9. This gives a optimal value of approximately $4,85$ at a cost of 24494\euro.
 
 \section{Multi-objective optimization applied to site combination selection - optimization}
+The figure produced by the script can be seen in Figure \ref{fig:8_first_run}.
+	\begin{figure}[H]
+		\includegraphics[width=0.8\textwidth]{8_first_run.png}
+		\caption{The pareto optimal solutions and core indexes.}
+		\label{fig:8_first_run}
+	\end{figure}
+	  
 
-	
+\section{Multi-objective optimization applied to site combination selection - solutions}
+86 different pareto optimal solutions were found by the algorithm. The solution is among them, the 7th found pareto optimal solution. The results do not change significantly by running the script multiple times, all pareto optimal solutions aren't found each time. The core indices are roughly the same however.
+
+\section{Multi-objective optimization applied to site combination selection - core indices}
+The site with the highest core index is site 2 with an approximately index of $72\%$ and the lowest core index are sites 1,4,	 and 5 with approximately $52\%$.
+
+\section{Robustness analysis of site combination selection - Formulation of feasibility region}
+The feasible region of $S$ can be defined as 
+\begin{align}
+	S &= \{w_i:i=1...9|0.8r_i\leq \frac{w_i}{w_7} \leq 1.25r_i \forall i,\sum_{i=1}^{9} w_i = 1\}\\
+	r_i &= \frac{w_i^*}{w_7^*}\\	
+\end{align}
+From here we can formulate the linear constraint as 
+\begin{align}
+	0.8\frac{w_i^*}{w_7^*}w_7 - w_i &\leq 0 \qquad \forall i \\
+	w_i - 1.25\frac{w_i^*}{w_7^*}w_7 &\leq 0 \qquad \forall i
+\end{align}
+\section{Robustness analysis of site combination selection - Tables}
+Table \ref{tab:aw} shows the matrix $A_w$ and $B_w$ is simply a $18\times 1$ vector full of zeros.
+\begin{table}[H]
+	\centering
+	\caption{$A_w$}
+	\label{tab:aw}
+	\begin{tabular}{lllllllll}
+		-1 & 0  & 0  & 0  & 0  & 0  & 0.291319372367055  & 0  & 0  \\
+		0  & -1 & 0  & 0  & 0  & 0  & 0.193190583761437  & 0  & 0  \\
+		0  & 0  & -1 & 0  & 0  & 0  & 0.128793838800555  & 0  & 0  \\
+		0  & 0  & 0  & -1 & 0  & 0  & 0.360001046636372  & 0  & 0  \\
+		0  & 0  & 0  & 0  & -1 & 0  & 0.480001395515163  & 0  & 0  \\
+		0  & 0  & 0  & 0  & 0  & -1 & 0.540001569954559  & 0  & 0  \\
+		0  & 0  & 0  & 0  & 0  & 0  & -0.200000000000000 & 0  & 0  \\
+		0  & 0  & 0  & 0  & 0  & 0  & 0.319688102361037  & -1 & 0  \\
+		0  & 0  & 0  & 0  & 0  & 0  & 0.375791300707352  & 0  & -1 \\
+		1  & 0  & 0  & 0  & 0  & 0  & -0.455186519323524 & 0  & 0  \\
+		0  & 1  & 0  & 0  & 0  & 0  & -0.301860287127245 & 0  & 0  \\
+		0  & 0  & 1  & 0  & 0  & 0  & -0.201240373125867 & 0  & 0  \\
+		0  & 0  & 0  & 1  & 0  & 0  & -0.562501635369332 & 0  & 0  \\
+		0  & 0  & 0  & 0  & 1  & 0  & -0.750002180492442 & 0  & 0  \\
+		0  & 0  & 0  & 0  & 0  & 1  & -0.843752453053998 & 0  & 0  \\
+		0  & 0  & 0  & 0  & 0  & 0  & -0.250000000000000 & 0  & 0  \\
+		0  & 0  & 0  & 0  & 0  & 0  & -0.499512659939121 & 1  & 0  \\
+		0  & 0  & 0  & 0  & 0  & 0  & -0.587173907355237 & 0  & 1 
+	\end{tabular}
+\end{table}
+\section{Robustness analysis of site combination selection - Feasible site combinations}
+We get the number of feasible site combinations as the non-zero values of the vector F: 736.
+
+\section{Robustness analysis of site combination selection - Non-dominated feasible combinations}
+The number of non-dominated, and feasible according to our linear constraints, solutions can be seen from $Z_{ND}$ and is 3.
+\section{Robustness analysis of site combination selection - Non-dominated sites}
+The sites that are non-dominated and feasible according to our linear constraints are 2, 3, 6, and 9. 
+\section{Robustness analysis of site combination selection - Previous solution}
+The reason our previous solution is found among the non-dominated ones is that our original weights are within the feasible region and a optimal solution is always a non-dominated solution. 
+\section{Robustness analysis of site combination selection - Non-dominated combinations}
+The number of non-dominated solutions can be seen from $Z_{ND2}$ and is 82.
+\section{Robustness analysis of site combination selection - }
+Since the amount of solutions found in part 8 is larger than in 17, we can for sure conclude that there are not in the set of non-dominated solutions. This can happen 
+
+\section{Robustness analysis of site combination selection - }
+We can find 37 solutions that are non-dominated but not optimal. This is since a solution can be non-dominated without being optimal. We have clear examples of this in the lecture slides, for example slide 6b slide 22. 
 \end{document}

@@ -27,7 +27,7 @@ f(6,:) = [0.55 0.25 1 0.1 0.05 0.8 0.5 0.5 0.8 0.1];
 f(7,:) = [0 0 0 0 0.3 0 0 0 0.4 0.05];
 f(8,:) = [0.500488759 0.750733138 0 0 0 0.500488759 0.999022483 0.96969697 0 0.500488759];
 f(9,:) = [0 1 0.581731655 0.425767726 0 0.5 0.190983006 0 0 0.671720323];
-f = A.*f'; %times area and transpose, since the initial input is the wrong way
+f = f'; %transpose, since the initial input is the wrong way
 
 %--------------------------------Calculating utopian vector--------------------------------------
 a=c;
@@ -75,9 +75,9 @@ for k=1:5000
     %----------------------------Weighted max-norm approach -------------------------------------------
     A_tilde=[-lambda.*f' -ones(9,1);a 0];
     B_tilde=[-lambda.*utopian_vec; b];
-    ylb_tilde=[ylb;-inf];
-    yub_tilde=[yub;inf];
-    [x2, WS, exitflag] = intlinprog([zeros(m,1); 1], xint,A_tilde, B_tilde,[],[],ylb_tilde,yub_tilde); %Fill in the arguments of intlinprog regarding the weighted max-norm approach
+    vlb_tilde=[vlb;-inf];
+    vub_tilde=[vub;inf];
+    [x2, WS, exitflag] = intlinprog([zeros(m,1); 1], xint,A_tilde, B_tilde,[],[],vlb_tilde,vub_tilde); %Fill in the arguments of intlinprog regarding the weighted max-norm approach
     %(It may be helpful to define the arguments separately on preceding lines)
     
     x=x2(1:m); %Discarding the optimal value of Delta from the PO-solution x2
