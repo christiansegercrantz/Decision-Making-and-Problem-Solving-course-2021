@@ -56,7 +56,11 @@ The value functions are as follows:
 			 0 & 3 \leq x_9
 		\end{cases}
 \end{align}
-For the derivation for $v_1, v_2, v_3, v_4, v_5, v_6, v_7$ simple linear interpolation was used based on the given facts. The derivation for $v_9$ can be seen below.
+For the derivation for $v_1, v_2, v_3, v_4, v_5, v_6, v_7$ simple linear interpolation was used based on the given information. 
+
+The derivation of $v_8$ made use of the fact that the ratio $ \frac{v_8(k+1)- v_8(k)}{v_8(k)- v_8(k-1)}=0.5$. Using this and the sum of the geometric sum is $\sum_{k}ar^k = a\left(\frac{1-r^{n+1}}{1-r}\right)$ we can derive the closed form.
+
+The derivation for $v_9$ can be seen below.
 %\begin{comment} v_9 derivation
 \begin{equation}
 B+A(1-e^{-(3-x_9)/r}) \text{ and } v_9(0)-v_9(1) = v_9(1) - v_9(3)

@@ -41,8 +41,8 @@ A_temp_upper = -diag_ones;
 A_temp_upper(:,7) = A_temp_upper(:,7) + 0.8.*r;
 A_temp_lower = diag_ones;
 A_temp_lower(:,7) = A_temp_lower(:,7) - 1.25*r;
-Aw = [A_temp_upper;A_temp_lower]; %Define Aw here (It may be helpful to define Aw with multiple lines of code)
-Bw=zeros(2*n,1); %Define Bw here (It may be helpful to define Bw with multiple lines of code)
+Aw = [A_temp_upper;A_temp_lower; ones(1,n); -ones(1,n)]; %Define Aw here (It may be helpful to define Aw with multiple lines of code)
+Bw=[zeros(2*n,1);1;-1]; %Define Bw here (It may be helpful to define Bw with multiple lines of code)
 
 %Z: M x m binary matrix of all 2^m possible site combinations 
 %i.e. Z(k,j)=1 if and only if combination k includes site j
